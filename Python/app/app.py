@@ -8,7 +8,7 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return 200
+    return 'index'
 
 
 @app.route('/upload', methods = ['POST'])
@@ -21,7 +21,7 @@ def upload():
         print(part.content)  # Alternatively, part.text if you want unicode
         print(part.headers)
     
-    return 200
+    return 'uploaded file'
 
 
 if __name__ == "__main__":

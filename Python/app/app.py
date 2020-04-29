@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 
 
@@ -6,24 +6,12 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/')
-def hello():
-    return 'Hello'
-
-
-@app.route('/api/new')
-def newImg():
-    return 'Hello new'
-
-
-@app.route('/api/edit')
-def editImg():
-    return 'Hello edit'
-
-
-@app.route('/api/del')
-def delImg():
-    return 'deleto'
+@app.route('/upload', methods = ['POST'])
+def upload():
+    file = request.files['image']
+    if(file):
+        print("uploaded")
+    
 
 
 if __name__ == "__main__":

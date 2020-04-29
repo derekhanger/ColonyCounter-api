@@ -33,8 +33,9 @@ def upload():
     bytez = readimage('assets/file.temp')
 
     image = Image.open(io.BytesIO(bytez))
-    image.save("assets/picture.png")
+    image.save("assets/picture.png", format='png')
 
+    
     return 'uploaded file'
 
 

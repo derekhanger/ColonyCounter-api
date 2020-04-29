@@ -17,5 +17,8 @@ def upload():
         print(part.content)  # Alternatively, part.text if you want unicode
         print(part.headers)
     
+    return 200
 
-    return 'upload'
+
+if __name__ == "__main__":
+    app.run(debug=True)

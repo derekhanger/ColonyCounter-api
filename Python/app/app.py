@@ -9,6 +9,12 @@ CORS(app)
 
 @app.route('/upload', methods = ['POST'])
 def upload():
+
+    img = request.files['image']
+    with open('result.png', 'w') as result:
+        result.write(img)
+    
+
     testEnrollResponse = requests.post(...)
     multipart_data = decoder.MultipartDecoder.from_response(testEnrollResponse)
 
